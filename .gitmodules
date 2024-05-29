@@ -4,3 +4,4 @@
 [submodule "REMCU"]
 	path = REMCU
 	url = https://github.com/emrxv/remcu.git
+	branch = master
