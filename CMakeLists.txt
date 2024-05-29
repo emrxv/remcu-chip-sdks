@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(
-    remcu
-    VERSION 1.0
-    LANGUAGES CXX)
+project(remcu LANGUAGES CXX VERSION 1.0)
 
 set(CMAKE_POLICY_DEFAULT_CMP0153 OLD)
 
