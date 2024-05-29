@@ -44,10 +44,10 @@ jobs:
         run: cmake -B ${{github.workspace}}/build -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/remcu/platform/raspberry_pi_armv8_bcm2710.cmake -Wno-dev
     
       - name: Build
-        run: cmake --build ${{github.workspace}}/build 
+        run: cmake --build ${{github.workspace}}/build --verbose
       - name: Zip artifacts
         run: |
-          zip -qqr build_folder.zip ${{github.workspace}}/build
+          zip -qqr build_folder.zip ${{github.workspace}}/build 
           ls -la build_folder.zip
           ls -lh build_folder.zip
       - uses: actions/upload-artifact@v4
