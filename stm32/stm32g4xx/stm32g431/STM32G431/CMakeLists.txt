@@ -32,6 +32,3 @@ FILE(GLOB COPY_HEADER_FROM_LIB
 file(INSTALL ${COPY_HEADER_FROM_LIB}
             DESTINATION  ${ALL_INCLUDE_DIR}
             )
-
-
-add_subdirectory(test)
