@@ -25,13 +25,6 @@ if(NOT WIN32)
 
     add_subdirectory(SiLabs)
 
-    if(NOT ${TARGET_REMCU_OS_NAME} STREQUAL "Raspbian_armv8")
-        if(NOT APPLE)
-            add_subdirectory(infineon)
-        endif()
-    endif()
-endif(NOT WIN32)
-
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 
 set(CMAKE_MODULE_PATH ${REMCU_VM_PATH}/cmake)
