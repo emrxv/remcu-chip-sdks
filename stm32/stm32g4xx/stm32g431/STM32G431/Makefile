@@ -22,10 +22,10 @@ $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_adc.c \
 $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_i2c.c \
 $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_wwdg.c \
 $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_usart.c \
-$(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_pwr.c \
 $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_flash.c \
 
 SRC_NOT_USED = \
+$(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_pwr.c \
 $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_misc.c \
 $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_dbgmcu.c \
 $(MCU_SDK_PATH)/Libraries/STM32G4xx_HAL_Driver/src/stm32g4xx_hal_can.c \
