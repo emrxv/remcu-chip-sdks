@@ -26,7 +26,6 @@ if(NOT WIN32)
     add_subdirectory(SiLabs)
 
     if(NOT ${TARGET_REMCU_OS_NAME} STREQUAL "Raspbian_armv8")
-        add_subdirectory(freescale)
         if(NOT APPLE)
             add_subdirectory(infineon)
         endif()
