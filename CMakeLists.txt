@@ -24,7 +24,7 @@ if(NOT WIN32)
     endif()
 
     add_subdirectory(SiLabs)
-
+endif(NOT WIN32)
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 
 set(CMAKE_MODULE_PATH ${REMCU_VM_PATH}/cmake)
