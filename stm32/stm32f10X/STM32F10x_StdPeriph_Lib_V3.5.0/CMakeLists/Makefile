@@ -70,7 +70,9 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pwr.c \
 # List of include paths.
 INC_PATH = \
        $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/inc/ \
-       $(MCU_SDK_PATH)/Libraries/CMSIS/CM3/CoreSupport/ \
+       $(MCU_SDK_PATH)/Libraries/CMSIS/Core/Include/ \
+       $(MCU_SDK_PATH)/Libraries/CMSIS/Core/Template/ARMv8-M/ \
+       $(MCU_SDK_PATH)/Libraries/CMSIS/Include/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ \
        $(MCU_SDK_PATH)/Project/STM32F10x_StdPeriph_Template/
 
