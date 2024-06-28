@@ -1,165 +1,67 @@
 /**
   ******************************************************************************
-  * @file    Project/STM32F10x_StdPeriph_Template/main.c 
+  * @file    Templates/Src/main.c 
   * @author  MCD Application Team
-  * @version V3.5.0
-  * @date    08-April-2011
   * @brief   Main program body
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * Copyright (c) 2016 STMicroelectronics.
+  * All rights reserved.
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
   ******************************************************************************
-  */  
+  */
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x.h"
-#include "stm32_eval.h"
-#include <stdio.h>
+#include "main.h"
 
-#ifdef USE_STM32100B_EVAL
- #include "stm32100b_eval_lcd.h"
-#elif defined USE_STM3210B_EVAL
- #include "stm3210b_eval_lcd.h"
-#elif defined USE_STM3210E_EVAL
- #include "stm3210e_eval_lcd.h" 
-#elif defined USE_STM3210C_EVAL
- #include "stm3210c_eval_lcd.h"
-#elif defined USE_STM32100E_EVAL
- #include "stm32100e_eval_lcd.h"
-#endif
+/** @addtogroup STM32F1xx_HAL_Examples
+  * @{
+  */
 
-/** @addtogroup STM32F10x_StdPeriph_Template
+/** @addtogroup Templates
   * @{
   */
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#ifdef USE_STM32100B_EVAL
-  #define MESSAGE1   "STM32 MD Value Line " 
-  #define MESSAGE2   " Device running on  " 
-  #define MESSAGE3   "  STM32100B-EVAL    " 
-#elif defined (USE_STM3210B_EVAL)
-  #define MESSAGE1   "STM32 Medium Density" 
-  #define MESSAGE2   " Device running on  " 
-  #define MESSAGE3   "   STM3210B-EVAL    " 
-#elif defined (STM32F10X_XL) && defined (USE_STM3210E_EVAL)
-  #define MESSAGE1   "  STM32 XL Density  " 
-  #define MESSAGE2   " Device running on  " 
-  #define MESSAGE3   "   STM3210E-EVAL    "
-#elif defined (USE_STM3210E_EVAL)
-  #define MESSAGE1   " STM32 High Density " 
-  #define MESSAGE2   " Device running on  " 
-  #define MESSAGE3   "   STM3210E-EVAL    " 
-#elif defined (USE_STM3210C_EVAL)
-  #define MESSAGE1   " STM32 Connectivity " 
-  #define MESSAGE2   " Line Device running" 
-  #define MESSAGE3   " on STM3210C-EVAL   "
-#elif defined (USE_STM32100E_EVAL)
-  #define MESSAGE1   "STM32 HD Value Line " 
-  #define MESSAGE2   " Device running on  " 
-  #define MESSAGE3   "  STM32100E-EVAL    "   
-#endif
-
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
- USART_InitTypeDef USART_InitStructure;
-
 /* Private function prototypes -----------------------------------------------*/
-#ifdef __GNUC__
-/* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
-   set to 'Yes') calls __io_putchar() */
-#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-#else
-#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-#endif /* __GNUC__ */
+void SystemClock_Config(void);
 
 /* Private functions ---------------------------------------------------------*/
 
 /**
-  * @brief  Main program.
+  * @brief  Main program
   * @param  None
   * @retval None
   */
 int main(void)
 {
-  /*!< At this stage the microcontroller clock setting is already configured, 
-       this is done through SystemInit() function which is called from startup
-       file (startup_stm32f10x_xx.s) before to branch to application main.
-       To reconfigure the default setting of SystemInit() function, refer to
-       system_stm32f10x.c file
-     */     
 
-  /* Initialize LEDs, Key Button, LCD and COM port(USART) available on
-     STM3210X-EVAL board ******************************************************/
-  STM_EVAL_LEDInit(LED1);
-  STM_EVAL_LEDInit(LED2);
-  STM_EVAL_LEDInit(LED3);
-  STM_EVAL_LEDInit(LED4);
-
-  /* USARTx configured as follow:
-        - BaudRate = 115200 baud  
-        - Word Length = 8 Bits
-        - One Stop Bit
-        - No parity
-        - Hardware flow control disabled (RTS and CTS signals)
-        - Receive and transmit enabled
-  */
-  USART_InitStructure.USART_BaudRate = 115200;
-  USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-  USART_InitStructure.USART_StopBits = USART_StopBits_1;
-  USART_InitStructure.USART_Parity = USART_Parity_No;
-  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-  USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-
-  STM_EVAL_COMInit(COM1, &USART_InitStructure);
-
-  /* Initialize the LCD */
-#ifdef USE_STM32100B_EVAL
-  STM32100B_LCD_Init();
-#elif defined (USE_STM3210B_EVAL)
-  STM3210B_LCD_Init();
-#elif defined (USE_STM3210E_EVAL)
-  STM3210E_LCD_Init();
-#elif defined (USE_STM3210C_EVAL)
-  STM3210C_LCD_Init();
-#elif defined (USE_STM32100E_EVAL)
-  STM32100E_LCD_Init();  
-#endif
-
-  /* Display message on STM3210X-EVAL LCD *************************************/
-  /* Clear the LCD */ 
-  LCD_Clear(LCD_COLOR_WHITE);
-
-  /* Set the LCD Back Color */
-  LCD_SetBackColor(LCD_COLOR_BLUE);
-  /* Set the LCD Text Color */
-  LCD_SetTextColor(LCD_COLOR_WHITE);
-  LCD_DisplayStringLine(LCD_LINE_0, (uint8_t *)MESSAGE1);
-  LCD_DisplayStringLine(LCD_LINE_1, (uint8_t *)MESSAGE2);
-  LCD_DisplayStringLine(LCD_LINE_2, (uint8_t *)MESSAGE3);
-
-  /* Retarget the C library printf function to the USARTx, can be USART1 or USART2
-     depending on the EVAL board you are using ********************************/
-  printf("\n\r %s", MESSAGE1);
-  printf(" %s", MESSAGE2);
-  printf(" %s\n\r", MESSAGE3);
-
-  /* Turn on leds available on STM3210X-EVAL **********************************/
-  STM_EVAL_LEDOn(LED1);
-  STM_EVAL_LEDOn(LED2);
-  STM_EVAL_LEDOn(LED3);
-  STM_EVAL_LEDOn(LED4);
-
-  /* Add your application code here
+  /* STM32F107xC HAL library initialization:
+       - Configure the Flash prefetch
+       - Systick timer is configured by default as source of time base, but user 
+         can eventually implement his proper time base source (a general purpose 
+         timer for example or other time source), keeping in mind that Time base 
+         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and 
+         handled in milliseconds basis.
+       - Set NVIC Group Priority to 4
+       - Low Level Initialization
      */
+  HAL_Init();
+
+  /* Configure the system clock to 72 MHz */
+  SystemClock_Config();
+
+
+  /* Add your application code here */
+
 
   /* Infinite loop */
   while (1)
@@ -168,22 +70,63 @@ int main(void)
 }
 
 /**
-  * @brief  Retargets the C library printf function to the USART.
+  * @brief  System Clock Configuration
+  *         The system Clock is configured as follow : 
+  *            System Clock source            = PLL (HSE)
+  *            SYSCLK(Hz)                     = 72000000
+  *            HCLK(Hz)                       = 72000000
+  *            AHB Prescaler                  = 1
+  *            APB1 Prescaler                 = 2
+  *            APB2 Prescaler                 = 1
+  *            HSE Frequency(Hz)              = 25000000
+  *            HSE PREDIV1                    = 5
+  *            HSE PREDIV2                    = 5
+  *            PLL2MUL                        = 8
+  *            Flash Latency(WS)              = 2
   * @param  None
   * @retval None
   */
-PUTCHAR_PROTOTYPE
+void SystemClock_Config(void)
 {
-  /* Place your implementation of fputc here */
-  /* e.g. write a character to the USART */
-  USART_SendData(EVAL_COM1, (uint8_t) ch);
+  RCC_ClkInitTypeDef clkinitstruct = {0};
+  RCC_OscInitTypeDef oscinitstruct = {0};
+  
+  /* Configure PLLs ------------------------------------------------------*/
+  /* PLL2 configuration: PLL2CLK = (HSE / HSEPrediv2Value) * PLL2MUL = (25 / 5) * 8 = 40 MHz */
+  /* PREDIV1 configuration: PREDIV1CLK = PLL2CLK / HSEPredivValue = 40 / 5 = 8 MHz */
+  /* PLL configuration: PLLCLK = PREDIV1CLK * PLLMUL = 8 * 9 = 72 MHz */ 
 
-  /* Loop until the end of transmission */
-  while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_TC) == RESET)
-  {}
+  /* Enable HSE Oscillator and activate PLL with HSE as source */
+  oscinitstruct.OscillatorType        = RCC_OSCILLATORTYPE_HSE;
+  oscinitstruct.HSEState              = RCC_HSE_ON;
+  oscinitstruct.HSEPredivValue        = RCC_HSE_PREDIV_DIV5;
+  oscinitstruct.Prediv1Source         = RCC_PREDIV1_SOURCE_PLL2;
+  oscinitstruct.PLL.PLLState          = RCC_PLL_ON;
+  oscinitstruct.PLL.PLLSource         = RCC_PLLSOURCE_HSE;
+  oscinitstruct.PLL.PLLMUL            = RCC_PLL_MUL9;
+  oscinitstruct.PLL2.PLL2State        = RCC_PLL2_ON;
+  oscinitstruct.PLL2.PLL2MUL          = RCC_PLL2_MUL8;
+  oscinitstruct.PLL2.HSEPrediv2Value  = RCC_HSE_PREDIV2_DIV5;
+  if (HAL_RCC_OscConfig(&oscinitstruct)!= HAL_OK)
+  {
+    /* Initialization Error */
+    while(1);
+  }
 
-  return ch;
+  /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2 
+     clocks dividers */
+  clkinitstruct.ClockType = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
+  clkinitstruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  clkinitstruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  clkinitstruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  clkinitstruct.APB1CLKDivider = RCC_HCLK_DIV2;  
+  if (HAL_RCC_ClockConfig(&clkinitstruct, FLASH_LATENCY_2)!= HAL_OK)
+  {
+    /* Initialization Error */
+    while(1); 
+  }
 }
+
 
 #ifdef  USE_FULL_ASSERT
 
@@ -210,5 +153,6 @@ void assert_failed(uint8_t* file, uint32_t line)
   * @}
   */
 
-
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+/**
+  * @}
+  */
