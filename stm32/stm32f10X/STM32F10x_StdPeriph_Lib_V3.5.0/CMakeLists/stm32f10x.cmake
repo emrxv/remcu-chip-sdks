@@ -35,6 +35,7 @@ FILE(GLOB COPY_HEADER_FROM_LIB
       ${MCU_SDK_PATH}/Project/STM32F10x_StdPeriph_Template/stm32f1xx_hal_conf.h
       ${MCU_SDK_PATH}/Libraries/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c
 	  ${MCU_SDK_PATH}/Libraries/CMSIS/Device/ST/STM32F1xx/Include/*.h
+	  ${MCU_SDK_PATH}/Libraries/CMSIS/Core_A/Include/*.h
 	 # ${MCU_SDK_PATH}/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/*.h
       )
 

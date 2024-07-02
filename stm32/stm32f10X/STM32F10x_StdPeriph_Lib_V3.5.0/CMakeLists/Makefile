@@ -75,6 +75,7 @@ INC_PATH = \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Include/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Device/ST/STM32F1xx/Include/ \
        $(MCU_SDK_PATH)/Project/STM32F10x_StdPeriph_Template/ \
+	   $(MCU_SDK_PATH)/Libraries/CMSIS/Core_A/Include/ \
 
 INC_NOT_USED = \
 
