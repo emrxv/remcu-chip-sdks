@@ -1,6 +1,6 @@
 # List of C source files.
 C_SRC = \
-$(MCU_SDK_PATH)/Libraries/CMSIS/Device/ST/STM32F1xx/Source/system_stm32f1xx.c \
+$(MCU_SDK_PATH)/Libraries/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_adc.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_adc_ex.c \
