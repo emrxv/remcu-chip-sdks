@@ -1,6 +1,6 @@
 # List of C source files.
 C_SRC = \
-$(MCU_SDK_PATH)/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.c \
+$(MCU_SDK_PATH)/Libraries/CMSIS/Device/ST/STM32F1xx/Source/system_stm32f1xx.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_adc.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_adc_ex.c \
@@ -73,7 +73,6 @@ INC_PATH = \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Core/Include/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Core/Template/ARMv8-M/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Include/ \
-       $(MCU_SDK_PATH)/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Device/ST/STM32F1xx/Include/ \
        $(MCU_SDK_PATH)/Project/STM32F10x_StdPeriph_Template/
 
