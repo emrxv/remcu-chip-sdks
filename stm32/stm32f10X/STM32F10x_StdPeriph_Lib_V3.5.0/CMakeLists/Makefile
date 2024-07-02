@@ -27,9 +27,6 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_msp_templ
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_nand.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_nor.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pccard.c \
-$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd.c \
-$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd_ex.c \
-$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pwr.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_rcc.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_rcc_ex.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_rtc.c \
@@ -66,6 +63,8 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_utils.c
 SRC_NOT_USED = \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/misc.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pwr.c \
+$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd.c \
+$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd_ex.c \
 
 # List of include paths.
 INC_PATH = \
