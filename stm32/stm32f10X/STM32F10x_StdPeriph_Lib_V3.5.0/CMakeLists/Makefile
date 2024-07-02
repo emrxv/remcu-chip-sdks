@@ -57,7 +57,6 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_sdmmc.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_spi.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_tim.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_usart.c \
-$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_usb.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_utils.c
 
 SRC_NOT_USED = \
@@ -65,6 +64,8 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/misc.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pwr.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd_ex.c \
+$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_usb.c \
+
 
 # List of include paths.
 INC_PATH = \
