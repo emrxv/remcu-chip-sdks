@@ -37,7 +37,6 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_spi.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_sram.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_tim.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_timebase_rtc_alarm_template.c \
-$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_timebase_tim_template.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_tim_ex.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_uart.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_usart.c \
@@ -65,7 +64,7 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pwr.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_pcd_ex.c \
 $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_ll_usb.c \
-
+$(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_timebase_tim_template.c \
 
 # List of include paths.
 INC_PATH = \
