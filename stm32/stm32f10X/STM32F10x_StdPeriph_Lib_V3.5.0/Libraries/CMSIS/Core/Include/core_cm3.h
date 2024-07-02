@@ -73,7 +73,7 @@
 /** __FPU_USED indicates whether an FPU is used or not.
     This core does not support an FPU at all
 */
-#define __FPU_USED       0
+#define __FPU_USED       0U
 
 #if defined ( __CC_ARM )
   #if defined __TARGET_FPU_VFP
