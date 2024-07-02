@@ -75,8 +75,9 @@
 */
 #define __FPU_USED       0U
 
-/*
+
 #if defined ( __CC_ARM )
+/*
   #if defined __TARGET_FPU_VFP
     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
   #endif
