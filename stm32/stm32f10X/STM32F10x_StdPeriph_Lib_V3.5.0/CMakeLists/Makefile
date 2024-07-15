@@ -69,12 +69,14 @@ $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f1xx_hal_timebase_
 # List of include paths.
 INC_PATH = \
        $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/inc/ \
+       $(MCU_SDK_PATH)/Libraries/STM32F10x_StdPeriph_Driver/inc/Legacy/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Core/Include/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Core/Template/ARMv8-M/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Include/ \
        $(MCU_SDK_PATH)/Libraries/CMSIS/Device/ST/STM32F1xx/Include/ \
        $(MCU_SDK_PATH)/Project/STM32F10x_StdPeriph_Template/ \
 	   $(MCU_SDK_PATH)/Libraries/CMSIS/Core_A/Include/ \
+
 
 INC_NOT_USED = \
 
