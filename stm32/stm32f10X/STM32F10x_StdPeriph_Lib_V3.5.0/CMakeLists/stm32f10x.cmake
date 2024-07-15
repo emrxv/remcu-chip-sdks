@@ -29,7 +29,6 @@ file(RENAME "${ALL_INCLUDE_DIR}/defines_${MCU_TYPE}.h"
 
 FILE(GLOB COPY_HEADER_FROM_LIB 
       ${MCU_SDK_PATH}/Libraries/CMSIS/Core/Include/core_cm3.h
-      ${MCU_SDK_PATH}/Libraries/CMSIS/Include/*.h
       ${MCU_SDK_PATH}/Libraries/CMSIS/Core/Template/ARMv8-M/ *.c
       ${MCU_SDK_PATH}/Libraries/STM32F10x_StdPeriph_Driver/inc/*.h
       ${MCU_SDK_PATH}/Libraries/STM32F10x_StdPeriph_Driver/inc/Legacy/*.h
